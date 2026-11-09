@@ -1,5 +1,7 @@
 # Practice Finances
 
+**Open the app: https://vinced-tech.github.io/practice-finances/**
+
 A simple money tracker for a solo therapy practice. Everything stays in your
 browser on your own device. There is no account, no server and no cloud.
 
