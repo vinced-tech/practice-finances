@@ -142,8 +142,10 @@ describe('remembering category choices', () => {
 
 // Uses a real statement that is kept OUT of git (personal financial data). Skipped when absent.
 const REAL = new URL('../examples/statement-jan-jun-2026.csv', import.meta.url);
-describe.skipIf(!existsSync(REAL))('real statement (Jan–Jun 2026 from the old spreadsheet)', () => {
-  const text = readFileSync(REAL, 'utf8');
+// The describe body runs even when skipped, so only read the file if it exists.
+const hasReal = existsSync(REAL);
+describe.skipIf(!hasReal)('real statement (Jan–Jun 2026 from the old spreadsheet)', () => {
+  const text = hasReal ? readFileSync(REAL, 'utf8') : '';
   const p = buildImportPreview(text, emptyState());
   const s = commitImport(emptyState(), p.rows).state;
 
