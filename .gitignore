@@ -5,3 +5,5 @@ dist/
 # Real bank/card statements are personal financial data - never commit them
 examples/*.csv
 *.xlsx
+# Downloadable copies of the project
+*.zip
